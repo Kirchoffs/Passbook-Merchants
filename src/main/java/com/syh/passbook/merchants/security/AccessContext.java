@@ -7,8 +7,8 @@ public class AccessContext {
         return token.get();
     }
 
-    public static void setToken(String tolenStr) {
-        token.set(tolenStr);
+    public static void setToken(String tokenStr) {
+        token.set(tokenStr);
     }
 
     public static void clearAccessKey() {
