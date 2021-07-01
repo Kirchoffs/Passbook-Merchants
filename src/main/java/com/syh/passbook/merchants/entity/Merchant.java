@@ -16,34 +16,34 @@ import javax.persistence.Table;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name="merchant")
+@Table(name = "merchant")
 public class Merchant {
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(name="id", nullable=false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable=false)
     private Integer id;
 
     @Basic
-    @Column(name="name", unique=true, nullable=false)
+    @Column(name = "name", unique = true, nullable = false)
     private String name;
 
     @Basic
-    @Column(name="logo_url", nullable=false)
+    @Column(name = "logo_url", nullable = false)
     private String logoUrl;
 
     @Basic
-    @Column(name="business_licence_url", nullable=false)
+    @Column(name = "business_licence_url", nullable = false)
     private String businessLicenceUrl;
 
     @Basic
-    @Column(name="phone", nullable=false)
+    @Column(name = "phone", nullable = false)
     private String phone;
 
     @Basic
-    @Column(name="address", nullable=false)
+    @Column(name = "address", nullable = false)
     private String address;
 
     @Basic
-    @Column(name="is_audit", nullable=false)
-    private boolean isAudit = false;
+    @Column(name = "is_audit", nullable = false)
+    private boolean isAudit = false; // Given default value
 }

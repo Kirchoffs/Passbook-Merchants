@@ -12,7 +12,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 public class PassTemplate {
-    private Integer id;
+    private Integer merchantId;
 
     private String title;
 
@@ -36,7 +36,7 @@ public class PassTemplate {
      * @return {@link ErrorCode}
      */
     public ErrorCode validate(MerchantDao merchantDao) {
-        if (!merchantDao.findById(id).isPresent()) {
+        if (!merchantDao.findById(merchantId).isPresent()) {
             return ErrorCode.MERCHANT_NOT_EXIST;
         }
         return ErrorCode.SUCCESS;

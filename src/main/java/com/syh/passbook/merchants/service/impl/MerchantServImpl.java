@@ -1,6 +1,5 @@
 package com.syh.passbook.merchants.service.impl;
 
-import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.syh.passbook.merchants.constant.Constants;
 import com.syh.passbook.merchants.constant.ErrorCode;
@@ -70,6 +69,7 @@ public class MerchantServImpl implements IMerchantServ {
             response.setErrorMsg(errorCode.getDesc());
         } else {
             String passTemplateJsonString = new GsonBuilder().setDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSX").create().toJson(passTemplate);
+            // send(topic, key, value)
             kafkaTemplate.send(
                     Constants.TEMPLATE_TOPIC,
                     Constants.TEMPLATE_TOPIC,

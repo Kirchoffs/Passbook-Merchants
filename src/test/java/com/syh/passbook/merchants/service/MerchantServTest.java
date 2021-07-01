@@ -1,7 +1,6 @@
 package com.syh.passbook.merchants.service;
 
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.syh.passbook.merchants.vo.CreateMerchantRequest;
 import com.syh.passbook.merchants.vo.PassTemplate;
 import org.apache.commons.lang.time.DateUtils;
@@ -45,14 +44,14 @@ public class MerchantServTest {
     @Test
     public void testDistributePassTemplate() {
         PassTemplate passTemplate = new PassTemplate();
-        passTemplate.setId(18);
-        passTemplate.setTitle("verizon");
-        passTemplate.setSummary("verizon");
-        passTemplate.setDesc("verizon");
+        passTemplate.setMerchantId(20);
+        passTemplate.setTitle("att family plan");
+        passTemplate.setSummary("phone plan for a family");
+        passTemplate.setDesc("Cheap but strong");
         passTemplate.setLimit(10000L);
-        passTemplate.setHasToken(false);
+        passTemplate.setHasToken(true);
         passTemplate.setBackground(2);
-        passTemplate.setStart(new Date());
+        passTemplate.setStart(DateUtils.addDays(new Date(), -10));
         passTemplate.setEnd(DateUtils.addDays(new Date(), 10));
         System.out.println("log:" + new Gson().toJson(merchantServ.distributePassTemplate(passTemplate)));
     }
